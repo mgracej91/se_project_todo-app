@@ -2,12 +2,28 @@ import { v4 as uuidv4 } from "https://cdn.skypack.dev/uuid";
 import { initialTodos, validationConfig } from "../utils/constants.js";
 import Todo from "../components/Todo.js";
 import FormValidator from "../components/FormValidator.js";
+import Section from "../components/Section.js";
 
 const addTodoButton = document.querySelector(".button_action_add");
 const addTodoPopup = document.querySelector("#add-todo-popup");
 const addTodoForm = addTodoPopup.querySelector(".popup__form");
 const addTodoCloseBtn = addTodoPopup.querySelector(".popup__close");
 const todosList = document.querySelector(".todos__list");
+
+const todosContainer = document.querySelector(".todos__list");
+
+const section = new Section({
+  items: items,
+  renderer: (items) => {
+    const todo = new todos(items, ".todo");
+    const todoElement = todo.generateTodo();
+
+    section.addItem(todoElement);
+  },
+  containerSelector: ".todos__list",
+});
+
+todoList.renderItems();
 
 const openModal = (modal) => {
   modal.classList.add("popup_visible");
@@ -48,14 +64,14 @@ addTodoForm.addEventListener("submit", (evt) => {
   newTodoValidator.resetValidation();
 });
 
-const renderTodo = (item) => {
+/*const renderTodo = (item) => {
   const todo = generateTodo(item);
   todosList.append(todo);
 };
 
 initialTodos.forEach((item) => {
   renderTodo(item);
-});
+});*/
 
 const newTodoValidator = new FormValidator(validationConfig, addTodoForm);
 newTodoValidator.enableValidation();
