@@ -1,12 +1,12 @@
 # Simple Todo App
 
-In my Todo App users are able to create a list of Todos with a Due date they would like to achieve each task. With each task the user can also mark as completed or remove it from their list.
+In my Todo App users are able to create a list of Todos with a due date they would like to complete each task by. Furthermore With each task the user can also mark as completed or remove it from their list, all while keeping track of the total.
 
 ## Functionality
 
-I have emplemented many funcations within this app to ensure it's user friendly. To name a few, I have set eroor messages for the input fields in the popup window to ensure only appropriate context is applied, and each Todo task will have a unique ID.
+I have emplemented many funcations within this app to ensure it's user friendly. To name a few: I added error messages for the input fields in the popup window to ensure only appropriate context is applied, each Todo task will have a unique ID and due date, best of all there is a counter keeping track of the number of completed todos out of total todos.
 
-## Technology
+#### Technology
 
 This project is built using the following technologies:
 
