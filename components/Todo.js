@@ -10,6 +10,7 @@ class Todo {
     this._todoDeleteBtn.addEventListener("click", () => {
       this._handleDelete();
       this._todoElement.remove();
+      this._todoElement = null;
     });
 
     this._todoCheckboxEl.addEventListener("change", (evt) => {
@@ -26,7 +27,7 @@ class Todo {
     this._todoLabel.setAttribute("for", `todo-${this._data.id}`);
   }
 
-  _generateDuedate() {
+  _generateDueDate() {
     this._dueDate = new Date(this._data.date);
     if (!isNaN(this._dueDate)) {
       this._todoDate.textContent = `Due: ${this._dueDate.toLocaleString(
@@ -53,7 +54,7 @@ class Todo {
 
     this._generateCheckboxEl();
     this._setEventListeners();
-    this._generateDuedate();
+    this._generateDueDate();
 
     return this._todoElement;
   }
